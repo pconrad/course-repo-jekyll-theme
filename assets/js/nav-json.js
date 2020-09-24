@@ -2,7 +2,8 @@
 layout: json
 comment: >
     nav-json.js is factored into an include file
-    so that in head_scripts.html the contents can be
+    so that in head_scripts.html and tail_scripts.html
+    the contents can be
     assigned to a variable
 
 ---

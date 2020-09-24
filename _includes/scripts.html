@@ -1,0 +1,26 @@
+<script>
+    var nav = {%- include nav-json.js -%} ;
+</script>
+
+<script
+   src="https://code.jquery.com/jquery-3.3.1.min.js"
+   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+   crossorigin="anonymous"></script>
+
+<script src="{{ '/assets/js/jquery-dateFormat.js' | relative_url }}"></script>
+
+<script src="{{ '/assets/js/site.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/moment.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/calendar.js' | relative_url }}"></script>
+
+
+{% if site.tail_scripts %}
+    {% for script in site.tail_scripts %}
+    {% if script contains "://" %}
+        {% capture script_path %}{{ script }}{% endcapture %}
+    {% else %}
+        {% capture script_path %}{{ script | relative_url }}{% endcapture %}
+    {% endif %}
+    <script src="{{ script_path }}"></script>
+    {% endfor %}
+{% endif %}
